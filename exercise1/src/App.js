@@ -1,4 +1,4 @@
-
+y
 import './App.css';
 import LeftNews from './components/LeftNews';
 import RightNews from './components/RightNews';
