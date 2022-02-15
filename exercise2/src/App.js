@@ -4,69 +4,54 @@ import Title from './components/Title'
 import ShoppingListContent from './components/ShoppingListContent';
 import ListAdditionInputs from './components/ListAdditionInputs'
 import { useState } from 'react';
+import ShopItems from './components/ShopItems';
+import ShopButtons from './components/ShopButtons';
+
 
 function App() {
 
-  //Haetaan palvelimelta ostoslistan sisältö
   const [ counterValue, setCounterValue ] = useState(0);
   const [ shoppingListItems, setShoppingListItems ] = useState([
     {
       id: 1,
-      name: 'maitoa',
-      qty: 4,
+      name: 'Kalja',
+      qty: 0,
       isChecked: true
     },
     {
       id: 2,
-      name: 'leipää',
-      qty: 5,
+      name: 'Maito',
+      qty: 0,
       isChecked: true
     },
     {
       id: 3,
-      name: 'juustoa',
-      qty: 2,
+      name: 'Kerma',
+      qty: 0,
+      isChecked: true
+    },
+    {
+      id: 4,
+      name: 'Nakki',
+      qty: 0,
       isChecked: true
     },
   ]);
 
-  const [description, setDescription] = useState("");
 
+  const addListItems = (id) => {
 
+    let random = Math.floor((Math.random() *8)+1)
+    let newShoppingListItems = [...shoppingListItems]
+    let result = newShoppingListItems.findIndex(i => i.id === id)
 
-  const onListAddition = (getRandomInt) => {
-    let newShoppingListItems = [...shoppingListItems, {  
-      id: shoppingListItems.length, 
-      name: 'Kalja',
-      qty : getRandomInt,
-      isChecked : false  
-     }]; 
-     setShoppingListItems(newShoppingListItems);
-  }
-  const onListAddition2 = (getRandomInt) => {
-    let newShoppingListItems = [...shoppingListItems, {  
-      id: shoppingListItems.length, 
-      name: 'Bisse',
-      qty : getRandomInt,
-     }]; 
-     setShoppingListItems(newShoppingListItems);
-  }
-  const onListAddition3 = (getRandomInt) => {
-    let newShoppingListItems = [...shoppingListItems, {  
-      id: shoppingListItems.length, 
-      name: 'Kossu',
-      qty : getRandomInt,
+      if (result !== -1) {
+        let additions = {...newShoppingListItems[result]}
+        additions.qty= additions.qty + random;
+        newShoppingListItems[result] = additions;
+        setShoppingListItems(newShoppingListItems)
 
-     }]; 
-     setShoppingListItems(newShoppingListItems);
-  }
-  const onListAddition4 = (getRandomInt) => {
-    let newShoppingListItems = [...shoppingListItems, {  
-      id: shoppingListItems.length, 
-      name: 'Jallu',
-      qty : getRandomInt,
-     }]; 
-     setShoppingListItems(newShoppingListItems);
+      }
   }
   
   return (
@@ -74,16 +59,8 @@ function App() {
       <Title />
 
       
-      <ShoppingListContent listItems={ shoppingListItems } 
-
-      descriptionFieldValue={ description }
-      /> 
-      <div className='row'>
-      <ListAdditionInputs onAddClick={ onListAddition } />
-       <ListAdditionInputs onAddClick={ onListAddition2} />
-       <ListAdditionInputs onAddClick={ onListAddition3} />
-       <ListAdditionInputs onAddClick={ onListAddition4} />
-       </div>
+      <ShopItems listItems={shoppingListItems}/>
+          <ShopButtons buy={addListItems}/>
 
     </div>
   );
