@@ -1,0 +1,52 @@
+.main{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.item{
+  
+  border: 1px solid black;
+  margin: 30px;
+  padding: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+}
+.container {
+  padding-top: 30px;
+  width: 300px;
+  margin: auto;
+}
+
+.input {
+  padding: 5px 15px;
+  width: 300px;
+}
+
+.user-list {
+  margin-top: 30px;
+}
+
+.list {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  color: red;
+  margin-right: 20px;
+}
+
+.title {
+  color: blue;
+}
+
+.price {
+  margin-left: auto;
+}
