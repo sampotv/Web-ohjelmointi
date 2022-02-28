@@ -1,0 +1,6 @@
+{"products":[{"id":1,"title":"Hard disk","price":129,"discountPercentage":12.96,"rating":4.69,"stock":94,"brand":"Apple","category":"smartphones","image":"./img1.png"},
+{"id":2,"title":"iPhone pen","price":899,"discountPercentage":17.94,"rating":4.44,"stock":34,"brand":"Apple","category":"smartphones","image":"./img2.png"},
+{"id":3,"title":"Monitor m5", "price":199, "image":"./img3.png"},
+{"id":4,"title":"Ink","price":10,"brand":"Apple","category":"smartphones","image":"./img4.png"},
+{"id":5,"title":"Printer","price":59,"brand":"Apple","category":"smartphones","image":"./img5.png"},
+{"id":6,"title":"Keyboard", "price":69, "image":"./img6.png"}]}
